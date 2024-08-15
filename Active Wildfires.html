@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Active Wildfires of Canada</title> 
+    <meta property="og:description" content="Use events and flyTo to center the map on a symbol." />
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.3.2/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@4.3.2/dist/maplibre-gl.js'></script>
+    <link rel="stylesheet" href="Active fires_style_sheet.css">
+</head>
+
+<body>
+    
+    <div id="map"></div>
+    <div id="color-toggle">
+        <text-align>Active Fires Map</text-align>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle-yellowgreen" checked=true>
+            <label for="toggle-yellowgreen" class="slider" id="slider-yellowgreen"></label>
+            <label for="toggle-yellowgreen">0-50 Ha</label>
+            <label class="color-circle" style="background-color: yellowgreen;"></label>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle-yellow" checked=True>
+            <label for="toggle-yellow" class="slider"></label>
+            <label for="toggle-yellow">51-500 Ha</label>
+            <label class="color-circle" style="background-color: yellow;"></label>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle-orange" checked=True>
+            <label for="toggle-orange" class="slider"></label>
+            <label for="toggle-orange">501-1000 Ha</label>
+            <label class="color-circle" style="background-color: orange;"></label>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle-red" checked=True>
+            <label for="toggle-red" class="slider"></label>
+            <label for="toggle-red">1001-10000 Ha</label>
+            <label class="color-circle" style="background-color: red;"></label>
+        </div>
+        <div class="toggle-container">
+            <input type="checkbox" id="toggle-purple" checked=True>
+            <label for="toggle-purple" class="slider"></label>
+            <label for="toggle-purple">10000+ Ha</label>
+            <label class="color-circle" style="background-color: purple;"></label>
+        </div>
+    </div>
+
+ 
+
+    <div class="content">
+  
+        <div class="month-slider-wrapper">
+          <header>
+            <ul class="shortcuts">
+              <li data-min-range="12">12 months</li>
+              <li data-min-range="6">6 months</li>
+              <li data-min-range="3">3 months</li>
+              <li class="active" data-min-range="1">1 month</li>
+            </ul>
+            <h3>Date range:</h3>
+          </header>
+          <div id="month-slider" class="slider"></div>
+        </div>
+        
+        <div class="sample-submit-data">
+          <h4>Data to use when submitting the form:</h4>
+          <p>
+            <label for="month-range-min">Min:</label>
+            <input name="month-range-min" type="text" value="" />
+          </p>
+          <p>
+            <label for="month-range-min">Max:</label>
+            <input name="month-range-max" type="text" value="" />
+          </p>
+        </div>
+        
+      </div>
+    
+    
+    <script src="./240730_Activefires-Coordinates.js"></script>
+</body>
+</html>
